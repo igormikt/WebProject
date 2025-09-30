@@ -1,38 +1,65 @@
 {% load static %}
 
 <!doctype html>
-<html lang="en">
+<html lang="ru" class="d-flex flex-column min-vh-100">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts (Roboto) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Ваши стили (опционально) -->
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
 
     {% block title %}
-
+        <title>IconDjango — ваш геймерский хаб</title>
     {% endblock %}
-
-    <title>Document</title>
 </head>
-<body>
-    <aside>
-        <img src="{% static 'main/img/icon.jpg' %}" alt="icon" width="150px">
-        <br>
-        <span>IconDjango</span>
-        <ul></ul>
-            <li><a href="">Главная</a></li>
-            <li><a href="">Второстепенная</a></li>
-    </aside>
-    <main>
-        {% include 'main/nav.html' %}
-        {% block content %}
+<body class="d-flex flex-column min-vh-100" style="font-family: 'Roboto', sans-serif; background-color: #f8f9fa;">
+    <div class="d-flex">
+        <!-- Сайдбар -->
+        <aside class="d-flex flex-column p-3 bg-dark text-white" style="width: 250px; min-height: 100vh;">
+            <div class="text-center mb-4">
+                <img src="{% static 'main/img/icon.jpg' %}" alt="icon" class="rounded-circle mb-2" width="80" height="80">
+                <h5 class="mb-0">IconDjango</h5>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white" href="/"><i class="fas fa-home me-2"></i>Главная</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white" href="/about"><i class="fas fa-info-circle me-2"></i>О нас</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white" href="/new"><i class="fas fa-newspaper me-2"></i>Новости</a>
+                </li>
+                <li class="nav-item mb-2">
+                    <a class="nav-link text-white" href="/contacts"><i class="fas fa-envelope me-2"></i>Контакты</a>
+                </li>
+            </ul>
+        </aside>
 
-        {% endblock %}
-    </main>
-    <footer>
-        {% include 'main/footer.html' %}
-<   </footer>
+        <!-- Основной контент -->
+        <main class="flex-grow-1 bg-light">
+            <div class="container mt-4">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </main>
+    </div>
 
+    <!-- Футер -->
+    {% include 'main/footer.html' %}
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,51 @@
+<!-- templates/main/contacts.html -->
+{% extends 'main/layoute.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="display-4">Контакты</h1>
+    <p class="lead">Свяжитесь с нами удобным способом.</p>
+
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <i class="fas fa-envelope me-2"></i>
+            <strong>Email:</strong> <a href="mailto:info@icondjango.com">info@icondjango.com</a>
+        </li>
+        <li class="list-group-item">
+            <i class="fab fa-discord me-2"></i>
+            <strong>Discord:</strong> <a href="https://discord.gg/icondjango">Присоединиться</a>
+        </li>
+        <li class="list-group-item">
+            <i class="fab fa-twitch me-2"></i>
+            <strong>Twitch:</strong> <a href="https://twitch.tv/icondjango">Наш стрим</a>
+        </li>
+        <li class="list-group-item">
+            <i class="fab fa-telegram me-2"></i>
+            <strong>Telegram:</strong> <a href="https://t.me/icondjango">Канал</a>
+        </li>
+        <li class="list-group-item">
+            <i class="fab fa-youtube me-2"></i>
+            <strong>YouTube:</strong> <a href="https://youtube.com/icondjango">Канал с обзорами</a>
+        </li>
+    </ul>
+
+    <div class="mt-4">
+        <h3>Форма обратной связи</h3>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Ваше имя</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Сообщение</label>
+                <textarea class="form-control" id="message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

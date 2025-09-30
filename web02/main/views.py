@@ -7,5 +7,11 @@ def index(request):
 def new(request):
     return render(request, 'main/new.html')
 
+def about(request):
+    return render(request, 'main/about.html')
+
+def contacts(request):
+    return render(request, 'main/contacts.html')
+
 
 # Create your views here.
