@@ -7,15 +7,22 @@
 {% block content %}
 <h1>Новостная страница</h1>
 
-{% for new in news %}
-	<div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
-		<h3>{{ new.title }}</h3>
-		<p>{{ new.short_description }}</p>
-		<div style="color: #666; font-size: 14px; margin-top: 10px;">
-			<strong>Автор:</strong> {{ new.author.username }}<br>
-			<strong>Дата публикации:</strong> {{ new.pub_date|date:"d.m.Y H:i" }}
-		</div>
-	</div>
-{% endfor %}
+    {% if news %}
+        {% for new in news %}
+            <div class="card">
+				<div class="card" style="width: 30rem;">
+					<div class="card-body">
+						<h5 class="card-title">{{ new.title }}</h5>
+						<p class="card-text">{{ new.short_description }} </p>
+						<a href="#" class="btn btn-primary">Подробнее</a>
+					</div>
+				</div>
+			</div>
+
+        {% endfor %}
+    {% else %}
+        <h4>Новостей ещё нет.</h4>
+
+    {% endif %}
 
 {% endblock %}
